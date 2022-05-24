@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual sua nacionalidade?</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: gainsboro;
+            color: purple;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            padding-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        #button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você é brasileiro?</h1>
+    <h2>Qual seu país de origem?</h2>
+    <input type="text" name="txtnac" id="txtnac">
+    <input id="button" type="button" value="enviar" onclick="verificar()">
+    <div class="res">
+
+    </div>
+
+    <script>
+        function verificar() {
+            var nac = document.querySelector('input#txtnac');
+            var res = document.querySelector('div.res');
+
+            res.innerHTML = `<p>${nac.value} é o seu país de origem</p>`
+
+            if (nac.value == 'Brasil') {
+                res.innerHTML += 'Portanto, você é brasileiro!'
+            } else {
+                res.innerHTML += 'Portanto, você é estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>
